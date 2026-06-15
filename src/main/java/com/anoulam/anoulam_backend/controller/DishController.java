@@ -3,6 +3,7 @@ package com.anoulam.anoulam_backend.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,37 +26,47 @@ public class DishController {
 
     @GetMapping("/{id}")
     public ResponseEntity<DishDto> getDishById(@PathVariable Integer id) {
-        DishDto dish = dishService.getDishById(id);
-        if (dish == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(dish);
-    }
+        try {
 
+            DishDto dish = dishService.getDishById(id);
+            if (dish == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            return ResponseEntity.ok(dish);
+
+        } catch (Exception e) {
+
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .build();
+                    
+        }
+    }
 
     // =========== FOR FUTURE FEATURE (TOP DISHES, RATING FEATURE) ===========
     // @GetMapping("/list")
     // public ResponseEntity<List<RecipeRecommendationDto>> getTopDishById(
-    //         @RequestParam String dishIds) {
+    // @RequestParam String dishIds) {
 
-    //     try {
+    // try {
 
-    //         List<Integer> ids = Arrays.stream(dishIds.split(","))
-    //                 .map(String::trim)
-    //                 .filter(id -> !id.isEmpty())
-    //                 .map(Integer::parseInt)
-    //                 .toList();
+    // List<Integer> ids = Arrays.stream(dishIds.split(","))
+    // .map(String::trim)
+    // .filter(id -> !id.isEmpty())
+    // .map(Integer::parseInt)
+    // .toList();
 
-    //         List<RecipeRecommendationDto> topDishes = dishService.getTopDishes(ids);
+    // List<RecipeRecommendationDto> topDishes = dishService.getTopDishes(ids);
 
-    //         return ResponseEntity.ok(topDishes);
+    // return ResponseEntity.ok(topDishes);
 
-    //     } catch (Exception e) {
+    // } catch (Exception e) {
 
-    //         System.out.println("CRASH LOG:");
-    //         e.printStackTrace();
+    // System.out.println("CRASH LOG:");
+    // e.printStackTrace();
 
-    //         return ResponseEntity.status(500).build();
-    //     }
+    // return ResponseEntity.status(500).build();
+    // }
     // }
 }
