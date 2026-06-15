@@ -120,7 +120,7 @@ GET /api/v1/dishes/{id}
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Clone Repository
 
@@ -148,7 +148,7 @@ mvn spring-boot:run
 
 ---
 
-## 🗄️ Database Design
+## Database Design
 
 Main Tables:
 
@@ -166,7 +166,7 @@ Many-to-many relationship table connecting dishes and ingredients.
 
 ---
 
-## 📚 Lessons Learned
+## Lessons Learned
 
 This project helped me learn:
 
@@ -182,7 +182,7 @@ This project helped me learn:
 
 ---
 
-## 🔗 Related Repository
+## Related Repository
 
 Frontend Repository:
 
@@ -190,7 +190,7 @@ https://github.com/jude342/anoulam-frontend
 
 ---
 
-## 👨‍💻 Developer
+## Developer
 
 Developed by Jude
 
