@@ -1,4 +1,5 @@
 package com.anoulam.anoulam_backend;
+
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,9 +21,12 @@ public class AnoulamBackendApplication {
 	private static void setSystemProperties(String key, Dotenv dotenv) {
 		String value = dotenv.get(key);
 
-		if(value != null) {
+		if (value == null || value.isEmpty()) {
+			value = System.getenv(key);
+		}
+
+		if (value != null && !value.isEmpty()) {
 			System.setProperty(key, value);
 		}
 	}
 }
-
