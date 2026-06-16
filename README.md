@@ -181,6 +181,7 @@ This project helped me learn:
 - Database Indexing (But not implemented)
 - Basic Security like Token Authentication
 - Basic Rate limiter
+- Docker Multi-stage build configuration
 ---
 
 ## Related Repository
