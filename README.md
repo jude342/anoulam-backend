@@ -179,7 +179,8 @@ This project helped me learn:
 - Query optimization
 - Deployment and cloud databases
 - Database Indexing (But not implemented)
-
+- Basic Security like Token Authentication
+- Basic Rate limiter
 ---
 
 ## Related Repository

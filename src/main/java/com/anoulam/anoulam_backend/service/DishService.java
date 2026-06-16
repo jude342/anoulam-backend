@@ -2,12 +2,9 @@ package com.anoulam.anoulam_backend.service;
 
 import com.anoulam.anoulam_backend.repository.*;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.anoulam.anoulam_backend.dto.DishDto;
-import com.anoulam.anoulam_backend.dto.RecipeRecommendationDto;
 
 @Service
 public class DishService {

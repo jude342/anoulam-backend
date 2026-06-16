@@ -12,6 +12,7 @@ public class AnoulamBackendApplication {
 		setSystemProperties("DB_URL", dotenv);
 		setSystemProperties("DB_USERNAME", dotenv);
 		setSystemProperties("DB_PASSWORD", dotenv);
+		setSystemProperties("ANOULAM_TOKEN_KEY", dotenv);
 
 		SpringApplication.run(AnoulamBackendApplication.class, args);
 	}
